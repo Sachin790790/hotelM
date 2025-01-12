@@ -1,0 +1,18 @@
+<div class="controls">
+    <label for="roomsToBook">Number of Rooms to Book:</label>
+    <input
+      id="roomsToBook"
+      type="number"
+      [(ngModel)]="roomsToBook"
+      placeholder="Enter number (1-5)"
+    />
+    <button (click)="bookRooms()">Book</button>
+    <button (click)="resetBooking()">Reset</button>
+    <button (click)="generateRandomBooking()">Random</button>
+  </div>
+  
+  <p *ngIf="error" class="error">{{ error }}</p>
+  <p *ngIf="bookedRooms.length > 0">Booked Rooms: {{ bookedRooms.join(', ') }}</p>
+  
+  <app-view-booking [hotel]="hotel"></app-view-booking>
+  

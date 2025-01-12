@@ -1,0 +1,22 @@
+
+   <table class="hotel" border="1">
+    <thead>
+      <tr>
+        <th>Floor</th>
+        <th colspan="10">Rooms</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let floor of hotel">
+        <td class="floor-number">Floor {{ floor.floorNo }}</td>
+        <td
+          *ngFor="let room of floor.rooms"
+          [class.booked]="room.isBooked"
+          class="room-cell"
+        >
+          {{ room.roomNo }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
